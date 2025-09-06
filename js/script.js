@@ -76,6 +76,11 @@ function completedTask(index) {
 }
 
 function deleteAll(){
+    if (confirm("Apakah anda yakin menghapus task ini?")){
+        alert("Task berhasil dihapus");
+    } else {
+        alert("Task batal dihapus");
+    }
     todoList = [];
     renderList();
 }
