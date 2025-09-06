@@ -46,11 +46,12 @@ function renderList(list = todoList, index) {
 function deleteList(index) {
     if (confirm("Apakah anda yakin menghapus task ini?")){
         alert("Task berhasil dihapus");
+        todoList.splice(index, 1);
+        renderList();
     } else {
         alert("Task batal dihapus");
     }
-    todoList.splice(index, 1);
-    renderList();
+
 }
 
 function filterList() {
@@ -78,11 +79,12 @@ function completedTask(index) {
 function deleteAll(){
 
     if (confirm("Apakah anda yakin menghapus task ini?")){
+        todoList = [];
+        renderList();
         alert("Task berhasil dihapus");
     } else {
         alert("Task batal dihapus");
     }
     
-    todoList = [];
-    renderList();
+
 }
