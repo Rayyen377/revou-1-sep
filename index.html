@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=add" />
+    
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="bg-sky-800 p-3 rounded">
+    <header class="font-bold text-3xl py-3 text-orange-100">
+        <h1>To Do List</h1>
+    </header>
+    <main>
+        <section>
+         <form class="flex items-center gap-2">
+            <label class="text-orange-100" for="taskInput">New Task:</label>
+            <input type="text" class="bg-sky-900 rounded px-1 text-orange-100"  id="taskInput" placeholder="Add a new task...">
+
+            <label class="pl-2 text-orange-100" for="taskDate">Date: </label>
+            <input type="date" class=" bg-sky-900 text-gray-400 rounded px-1 "  id="taskDate">
+
+            <button type="button" id="add" style="cursor: pointer" onclick="validateInput();"><span style="background-color:#024a71; color:#ffecd4; padding: 2px; border-radius: 1rem; " class="material-symbols-outlined">add</span></button>
+         </form>   
+        </section>
+
+        <section class="flex justify-between pb-1">
+            
+        <select class="text-orange-100 bg-sky-900 rounded px-1" id="status" onchange="filterList()">
+        <option value="all">All</option>
+        <option value="uncompleted">uncompleted</option>
+        <option value="completed">completed</option>
+        </select>
+
+            <button  id="delete-all" style="cursor: pointer" class="bg-sky-900 rounded p-1 text-orange-100" onclick="deleteAll()"> Delete All </button>
+        </section>
+
+        <section>
+            <table class="table-fixed w-lg bg-sky-900  ">
+                <thead>
+                    <tr class="text-orange-100 ">
+                        <th class="border border-sky-900 border-r-1 border-slate-900/50 p-1">Task</th>
+                        <th class="border border-sky-900 border-r-1 border-slate-900/50 p-1">Date</th>
+                        <th class="border border-sky-900 border-r-1 border-slate-900/50 p-1">Status</th>
+                        <th class="border border-sky-900 border-r-1 border-slate-900/50 p-1">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-orange-100 " id="todo-list">
+                    
+
+                    
+                </tbody>
+                <tbody id="taskTable" class="text-orange-100">
+
+            </table>
+        </section>
+    </main>
+    </div>
+    <footer>
+
+    </footer>
+    
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
