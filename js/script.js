@@ -37,7 +37,7 @@ function renderList(list = todoList, index) {
         <td class="border border-sky-900 border-r-1 border-slate-900/50 p-1" id="status"> ${item.completed} </td>
         <td class="border border-sky-900 border-r-1 border-slate-900/50 p-1"> ${item.completed === "uncompleted" ? 
                 `<button style="cursor: pointer" class="bg-orange-100 rounded p-1 text-sky-800" onclick="completedTask(${index});"> Done </button>` 
-                : ""} <button style="cursor: pointer" class="bg-orange-100 rounded p-1 text-sky-800" onclick="deleteList(${index});"> Delete </button></td>
+                : ""} <button style="cursor: pointer" class="bg-rose-900 text-orange-100 rounded p-1 " onclick="deleteList(${index});"> Delete </button></td>
        
         </tr>`;
 });
