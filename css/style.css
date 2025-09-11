@@ -9,3 +9,20 @@ header{
 label,input{
     padding-bottom: px;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: 0.5s; /* Durasi animasi */
+  animation-timing-function: ease-out;
+}

@@ -30,8 +30,11 @@ function renderList(list = todoList, index) {
     Todolist.innerHTML = "";
 
     list.forEach((item, index) => {
+        newRow = document.createElement("tr");
+        newRow.classList.add("fade-in");
+
         Todolist.innerHTML += `
-        <tr id="${item.taskInput}">
+        
         <td class="border border-sky-900 border-r-1 border-slate-900/50 p-1"> ${item.taskInput} </td>
         <td class="border border-sky-900 border-r-1 border-slate-900/50 p-1"> ${item.taskDate} </td>
         <td class="border border-sky-900 border-r-1 border-slate-900/50 p-1" id="status"> ${item.completed} </td>
@@ -39,7 +42,9 @@ function renderList(list = todoList, index) {
                 `<button style="cursor: pointer" class="bg-orange-100 rounded p-1 text-sky-800" onclick="completedTask(${index});"> Done </button>` 
                 : ""} <button style="cursor: pointer" class="bg-rose-900 text-orange-100 rounded p-1 " onclick="deleteList(${index});"> Delete </button></td>
        
-        </tr>`;
+        `;
+
+        Todolist.appendChild(newRow);
 });
 }
 
